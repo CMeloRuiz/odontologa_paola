@@ -11,7 +11,20 @@
       content="Consultorio odontológico de la Dra. Paola Giménez (MN 42041) en Villa Crespo, CABA. Prótesis, implantes, limpieza, blanqueamiento, estética dental y atención de urgencias. Lunes a viernes. Agendá tu cita por WhatsApp."
     />
     <meta name="author" content="Paola Giménez" />
-    <link rel="canonical" href="https://paolagimenez-odontologa.com.ar/" />
+
+    <!--
+      PENDIENTE: reemplazar esta URL de Render por el dominio definitivo cuando
+      la doctora lo contrate. Aparece en tres lugares del head (canonical,
+      og:url y og:image) y tambien en el JSON-LD de mas abajo.
+    -->
+    <link rel="canonical" href="https://paola-gimenez-odontologia.onrender.com/" />
+
+    <!--
+      QUITAR ANTES DE PUBLICAR: mientras la web sea una propuesta de
+      demostracion no debe aparecer en buscadores. Borrar esta linea cuando la
+      doctora apruebe el sitio; si no, Google nunca la va a indexar.
+    -->
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- Open Graph / redes -->
     <meta property="og:type" content="website" />
@@ -22,9 +35,28 @@
       property="og:description"
       content="Atención integral, personalizada y de calidad para cuidar tu salud bucal. Villa Crespo, CABA. Agendá tu cita por WhatsApp."
     />
-    <meta property="og:url" content="https://paolagimenez-odontologa.com.ar/" />
-    <meta property="og:image" content="./og-image.jpg" />
+    <meta property="og:url" content="https://paola-gimenez-odontologia.onrender.com/" />
+    <!--
+      og:image tiene que ser una URL absoluta: WhatsApp, Facebook y LinkedIn
+      leen la etiqueta desde sus propios servidores y una ruta relativa no les
+      resuelve a ninguna parte.
+    -->
+    <meta
+      property="og:image"
+      content="https://paola-gimenez-odontologia.onrender.com/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Paola Giménez, odontóloga — MN 42041, Villa Crespo, CABA."
+    />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://paola-gimenez-odontologia.onrender.com/og-image.jpg"
+    />
 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -49,8 +81,8 @@
         "name": "Paola Giménez · Odontóloga",
         "description": "Consultorio odontológico con atención integral, personalizada y de calidad en Villa Crespo, CABA.",
         "telephone": "+54 9 11 5737-4679",
-        "url": "https://paolagimenez-odontologa.com.ar/",
-        "image": "https://paolagimenez-odontologa.com.ar/og-image.jpg",
+        "url": "https://paola-gimenez-odontologia.onrender.com/",
+        "image": "https://paola-gimenez-odontologia.onrender.com/og-image.jpg",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
