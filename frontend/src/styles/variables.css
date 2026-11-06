@@ -1,0 +1,63 @@
+/*
+  Paleta extraida del volante impreso (src/assets/volante.jpg).
+  Se muestreo la franja inferior vino y se corrigio el balance de blancos
+  tomando como referencia el papel del propio volante:
+    franja inferior  -> #8c4f4f   (color principal)
+    circulos de icono-> #945657
+    banda "salud..."  -> #af6869
+  Sin azules ni verdes: el azul de la pagina guia se descarta a proposito.
+*/
+:root {
+  /* Marca */
+  --wine: #8c4f4f;
+  --wine-dark: #6b3a3b;
+  --wine-darker: #522c2d;
+  --wine-soft: #a96c6c;
+  --wine-tint: #c99a98;
+
+  /* Fondos rosados muy claros */
+  --rose-50: #fdf8f7;
+  --rose-100: #f8edeb;
+  --rose-150: #f2e0dd;
+  --rose-200: #e8cfcb;
+
+  /* Neutros */
+  --white: #ffffff;
+  --ink: #403634;
+  --ink-soft: #776764;
+  --ink-faint: #9b8c88;
+
+  /* Tipografias */
+  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Great Vibes', 'Brush Script MT', cursive;
+
+  /* Ritmo */
+  --page: 1180px;
+  --gutter: 20px;
+  --section-y: 72px;
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Sombras calidas (nunca grises azuladas) */
+  --shadow-sm: 0 2px 10px rgba(107, 58, 59, 0.07);
+  --shadow: 0 10px 30px rgba(107, 58, 59, 0.1);
+  --shadow-lg: 0 24px 60px rgba(107, 58, 59, 0.16);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 32px;
+    --section-y: 96px;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --gutter: 40px;
+    --section-y: 120px;
+  }
+}

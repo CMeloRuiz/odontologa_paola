@@ -1,0 +1,163 @@
+.consult__inner {
+  display: grid;
+  gap: 40px;
+}
+
+/* ---------- Foto ---------- */
+.consult__media {
+  position: relative;
+  align-self: start;
+  /* acotada para que acompañe al texto y no lo domine */
+  width: min(100%, 320px);
+  margin-inline: auto;
+}
+
+.consult__figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 6px solid var(--white);
+}
+
+.consult__figure img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.consult__sticker {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--white);
+  border: 5px solid var(--rose-50);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Texto ---------- */
+.consult__head {
+  margin-bottom: 28px;
+}
+
+.consult__head .eyebrow {
+  margin-bottom: 14px;
+}
+
+.consult__script {
+  display: inline-block;
+  font-size: clamp(2rem, 1.3rem + 3.2vw, 3.2rem);
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.consult__steps {
+  display: grid;
+  gap: 18px;
+  counter-reset: step;
+}
+
+.consult__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.consult__step-icon {
+  width: 42px;
+  height: 42px;
+  margin-top: 2px;
+  transition: transform 0.3s var(--ease);
+}
+
+.consult__step:hover .consult__step-icon {
+  transform: scale(1.07);
+}
+
+.consult__step-title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  color: var(--wine-dark);
+  margin-bottom: 3px;
+}
+
+.consult__step-text {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* ---------- Mini insignias ---------- */
+.consult__badges {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rose-200);
+}
+
+.consult__badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  background: var(--white);
+  border: 1px solid var(--rose-150);
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--wine-dark);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.consult__badge:hover {
+  border-color: var(--wine-tint);
+  transform: translateY(-2px);
+}
+
+.consult__badge svg {
+  flex: none;
+  color: var(--wine);
+}
+
+@media (min-width: 560px) {
+  .consult__badges {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .consult__badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: var(--radius);
+    padding: 14px;
+  }
+}
+
+@media (min-width: 960px) {
+  .consult__inner {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: 56px;
+  }
+
+  .consult__media {
+    position: sticky;
+    top: 110px;
+    width: min(100%, 340px);
+    margin-inline: 0;
+  }
+}

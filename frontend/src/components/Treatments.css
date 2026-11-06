@@ -1,0 +1,112 @@
+.treatments__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: 14px;
+}
+
+.treatments__card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--rose-150);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    border-color 0.3s var(--ease), background-color 0.3s var(--ease), opacity 0.7s var(--ease);
+}
+
+.treatments__card:hover {
+  transform: translateY(-4px);
+  background: var(--rose-50);
+  border-color: var(--rose-200);
+  box-shadow: var(--shadow);
+}
+
+.treatments__icon {
+  width: 44px;
+  height: 44px;
+  transition: transform 0.3s var(--ease);
+}
+
+.treatments__card:hover .treatments__icon {
+  transform: scale(1.06);
+}
+
+.treatments__name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--wine-dark);
+  letter-spacing: -0.005em;
+}
+
+/* ---------- Franja de cierre ---------- */
+.treatments__banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 40px;
+  padding: 24px 24px;
+  background: linear-gradient(110deg, var(--wine) 0%, var(--wine-dark) 100%);
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.treatments__banner-heart {
+  flex: none;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.treatments__banner-text {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-width: 0;
+}
+
+.treatments__banner-main {
+  font-size: clamp(1.02rem, 0.9rem + 0.7vw, 1.5rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
+}
+
+.treatments__banner-script {
+  font-size: clamp(1.7rem, 1.2rem + 2.2vw, 2.7rem);
+  line-height: 1.05;
+  color: var(--white);
+  margin-top: 2px;
+}
+
+.treatments__banner-tooth {
+  position: absolute;
+  right: -10px;
+  bottom: -14px;
+  color: rgba(255, 255, 255, 0.16);
+  pointer-events: none;
+}
+
+.treatments__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .treatments__banner {
+    gap: 26px;
+    padding: 30px 36px;
+  }
+
+  .treatments__banner-tooth {
+    position: static;
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.28);
+  }
+}

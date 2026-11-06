@@ -1,0 +1,129 @@
+.tips__script {
+  display: inline-block;
+  font-size: clamp(2rem, 1.3rem + 3.2vw, 3.2rem);
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.tips__grid {
+  display: grid;
+  gap: 24px;
+}
+
+.tips__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--rose-150);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease), opacity 0.7s var(--ease);
+}
+
+.tips__card:hover {
+  transform: translateY(-5px);
+  border-color: var(--rose-200);
+  box-shadow: var(--shadow);
+}
+
+.tips__figure {
+  margin: 0;
+  background: var(--rose-50);
+  border-bottom: 1px solid var(--rose-150);
+}
+
+/*
+  Caja cuadrada con object-fit: contain. Las dos infografias tienen
+  proporciones distintas (0.98 y 0.81): con "contain" entran enteras y las
+  dos tarjetas quedan a la misma altura. Con "cover" se recortaria parte del
+  contenido informativo de la pieza, que es justamente lo que hay que mostrar.
+*/
+.tips__figure img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.tips__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 24px;
+}
+
+.tips__tag {
+  padding: 5px 13px;
+  border-radius: var(--radius-pill);
+  background: var(--rose-100);
+  color: var(--wine);
+  font-size: 0.71rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tips__title {
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--wine-dark);
+}
+
+.tips__text {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.tips__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--wine);
+  transition: gap 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.tips__link:hover {
+  gap: 12px;
+  color: var(--wine-dark);
+}
+
+.tips__link svg {
+  flex: none;
+}
+
+.tips__footer {
+  margin-top: 34px;
+  text-align: center;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+}
+
+.tips__footer a {
+  font-weight: 600;
+  color: var(--wine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.tips__footer a:hover {
+  color: var(--wine-dark);
+}
+
+@media (min-width: 820px) {
+  .tips__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    /* acotadas para que no pesen mas que el resto de las secciones */
+    max-width: 940px;
+    margin-inline: auto;
+  }
+}

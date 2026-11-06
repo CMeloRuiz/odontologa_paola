@@ -1,0 +1,249 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: 104px;
+  padding-bottom: 56px;
+  background: linear-gradient(170deg, var(--rose-50) 0%, var(--white) 62%);
+}
+
+/* Halo rosado detras de la foto */
+.hero__glow {
+  position: absolute;
+  z-index: -2;
+  top: -18%;
+  right: -22%;
+  width: min(820px, 105vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 154, 152, 0.3) 0%, rgba(253, 248, 247, 0) 68%);
+  pointer-events: none;
+}
+
+/* Silueta de muela como detalle decorativo, igual que en el volante */
+.hero__tooth {
+  position: absolute;
+  z-index: -1;
+  top: 86px;
+  right: -74px;
+  width: 190px;
+  height: 190px;
+  color: var(--rose-150);
+  /* en celular compite con el titular, asi que se deja apenas insinuada */
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.hero__inner {
+  display: grid;
+  gap: 40px;
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hero__title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__title-main {
+  font-size: clamp(2.2rem, 1.3rem + 4.4vw, 4.1rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--wine-dark);
+}
+
+.hero__title-script {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: -2px;
+  font-size: clamp(2.6rem, 1.4rem + 5.6vw, 5rem);
+  line-height: 1.05;
+  padding-bottom: 0.08em;
+}
+
+.hero__title-heart {
+  margin-bottom: 0.55em;
+  color: var(--wine-soft);
+  flex: none;
+}
+
+.hero__lead {
+  max-width: 54ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Indicadores ---------- */
+.hero__highlights {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 26px;
+  border-top: 1px solid var(--rose-150);
+}
+
+.hero__highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero__highlight-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border-radius: 50%;
+  border: 1.5px solid var(--rose-200);
+  background: var(--white);
+  color: var(--wine);
+}
+
+.hero__highlight strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--wine-dark);
+}
+
+.hero__highlight small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  line-height: 1.4;
+}
+
+/* ---------- Foto ---------- */
+.hero__media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__blob {
+  position: absolute;
+  inset: auto 0 0 0;
+  top: 8%;
+  margin-inline: auto;
+  width: min(100%, 330px);
+  background: linear-gradient(165deg, var(--rose-100), var(--rose-200));
+  border-radius: 46% 54% 42% 58% / 38% 36% 64% 62%;
+  opacity: 0.75;
+}
+
+.hero__photo {
+  position: relative;
+  margin: 0;
+  width: min(100%, 310px);
+}
+
+.hero__photo picture {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 46% 54% 40% 60% / 36% 34% 66% 64%;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__photo picture::after {
+  /* degradado suave que funde la foto con el fondo, como en la pagina guia */
+  content: '';
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 36%;
+  background: linear-gradient(to bottom, rgba(253, 248, 247, 0) 0%, var(--rose-50) 92%);
+  pointer-events: none;
+}
+
+.hero__photo img {
+  width: 100%;
+  /*
+    Misma proporcion que el recorte de origen (200x265), asi la foto entra
+    entera en el marco y no se recorta ni se estira: el original es de baja
+    resolucion y cualquier escalado extra se nota.
+  */
+  /* 4:5, la misma proporcion del recorte: la foto entra entera */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 45%;
+  /*
+    Sin filtro de contraste: la foto de origen es chica y subir contraste
+    marca los bordes de la ampliacion, que es justo lo que se lee como
+    pixelado. La nitidez ya se aplica, suave, al generar el recorte.
+  */
+}
+
+/* ---------- Tablet ---------- */
+@media (min-width: 560px) {
+  .hero__highlights {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .hero__highlight {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 128px;
+    padding-bottom: 72px;
+  }
+
+  .hero__photo,
+  .hero__blob {
+    width: min(100%, 355px);
+  }
+}
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 960px) {
+  .hero {
+    padding-top: 150px;
+    padding-bottom: 96px;
+  }
+
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    align-items: center;
+    gap: 56px;
+  }
+
+  .hero__tooth {
+    top: 96px;
+    right: 2%;
+    width: 240px;
+    height: 240px;
+    opacity: 0.4;
+  }
+
+  .hero__photo,
+  .hero__blob {
+    width: min(100%, 395px);
+  }
+
+  .hero__blob {
+    transform: rotate(-6deg) translateY(10px);
+  }
+}

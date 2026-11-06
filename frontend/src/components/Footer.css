@@ -1,0 +1,156 @@
+.footer {
+  background: var(--wine-darker);
+  color: rgba(255, 255, 255, 0.78);
+  padding-top: 56px;
+}
+
+.footer__inner {
+  display: grid;
+  gap: 36px;
+  padding-bottom: 40px;
+}
+
+.footer__logo {
+  width: 184px;
+  margin-bottom: 16px;
+}
+
+.footer__license {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wine-tint);
+  margin-bottom: 12px;
+}
+
+.footer__meta {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  /*
+    Ancho suficiente para que la linea de horarios entre entera. Con 34ch se
+    partia y dejaba la "h" final colgando sola en el renglon siguiente.
+  */
+  max-width: 48ch;
+}
+
+.footer__heading {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.footer__list {
+  display: grid;
+  gap: 9px;
+}
+
+.footer__link {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.74);
+  transition: color 0.25s var(--ease), padding-left 0.25s var(--ease);
+}
+
+.footer__link:hover {
+  color: var(--white);
+  padding-left: 5px;
+}
+
+.footer__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  /*
+    Tope duro: "@paolagimenez_odonto" es una palabra sin puntos de corte y la
+    pildora mide ~254 px. Sin esto, en una columna mas angosta se sale del
+    ancho de la pagina y aparece scroll horizontal. Con max-width nunca pasa
+    del contenedor, y overflow-wrap le da un corte de emergencia.
+  */
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--white);
+  transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.footer__instagram:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.footer__instagram svg {
+  flex: none;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 22px 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.footer__credit svg {
+  color: var(--wine-tint);
+}
+
+/*
+  En tablet hay lugar para dos columnas, no para tres: con tres, la columna de
+  "Seguime" queda en ~178 px y la pildora de Instagram mide ~254 px. La marca
+  ocupa la fila completa y abajo van las secciones y la red.
+*/
+@media (min-width: 600px) {
+  .footer {
+    padding-top: 72px;
+  }
+
+  .footer__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 40px;
+    padding-bottom: 48px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/*
+  Recien a partir de 1080 px la tercera columna da 267 px y la pildora entra
+  holgada. Por debajo de ese ancho se queda en dos columnas.
+*/
+@media (min-width: 1080px) {
+  .footer__inner {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+}

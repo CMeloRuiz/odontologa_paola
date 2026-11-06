@@ -1,0 +1,18 @@
+.logo {
+  display: block;
+  line-height: 0;
+}
+
+.logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo--wine {
+  color: var(--wine);
+}
+
+.logo--light {
+  color: var(--white);
+}
